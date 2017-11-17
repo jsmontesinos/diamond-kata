@@ -32,7 +32,7 @@ describe('diamond kata', () => {
     
     const output = diamond.print(input);
 
-    expect(output).toBe(" A \nB B\n A ");
+    expect(output).toBe(" A \nB B\n A \n");
   });
 
 });
