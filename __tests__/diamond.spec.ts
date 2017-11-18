@@ -42,4 +42,12 @@ describe('diamond kata', () => {
     expect(output).toBe("  A  \n B B \nC   C\n B B \n  A  \n");
   });
 
+  it('should return empty diamond if input is 1', () => {
+    const input = "1";
+    
+    const output = diamond.print(input);
+
+    expect(output).toBe("");
+  });
+
 });

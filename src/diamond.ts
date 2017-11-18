@@ -11,7 +11,7 @@ function getRow(character: string, internalEspaces: number, externalEspaces: num
 const diamond = {  
   
   print(character: string): string {
-    if (!character) {
+    if (!character || characters.indexOf(character) < 0) {
       return "";
     }
     else if (character === "A"){
