@@ -5,29 +5,26 @@ function getEdge(externalEspaces: number): string {
 }
 
 function getRow(character: string, internalEspaces: number, externalEspaces: number): string {
+  if (character === "A") {
+    return getEdge(externalEspaces);
+  }
   return " ".repeat(externalEspaces) + character + " ".repeat(internalEspaces) + character + " ".repeat(externalEspaces);
 }
 
 const diamond = {  
   
   print(character: string): string {
-    const diamondLines: string[] = [];
     if (!character || characters.indexOf(character) < 0) {
       return "";
     }
-    
-    if (character === "A"){
-      return getEdge(0);
-    }
-    
+
     const charPos = characters.indexOf(character);
-    diamondLines.push(getEdge(charPos));
-    for (let i = 1; i < charPos; i++) {
-      diamondLines.push(getRow(characters[i], (i * 2) - 1, charPos - i));
-    }
-    const diamondMiddle = getRow(characters[charPos], (charPos * 2) - 1, 0);
+    const diamondLines = 
+      characters
+        .slice(0, charPos + 1)
+        .map((c, i) => getRow(c, (i * 2) - 1, charPos - i));
     
-    return diamondLines.join("\n").concat("\n").concat(diamondMiddle).concat("\n").concat(diamondLines.reverse().join("\n"));
+    return diamondLines.concat(diamondLines.slice().reverse().slice(1)).join("\n");
 
   }
 
