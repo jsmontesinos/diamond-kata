@@ -1,4 +1,3 @@
-import "jest";
 import diamond from '../src/diamond';
 
 describe('diamond kata', () => {
@@ -33,6 +32,14 @@ describe('diamond kata', () => {
     const output = diamond.print(input);
 
     expect(output).toBe(" A \nB B\n A \n");
+  });
+
+  it('should return C diamond if input is C', () => {
+    const input = "C";
+    
+    const output = diamond.print(input);
+
+    expect(output).toBe("  A  \n B B \nC   C\n B B \n  A  \n");
   });
 
 });

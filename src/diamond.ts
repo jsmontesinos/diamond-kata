@@ -1,4 +1,12 @@
-const characters: string[] = ["A", "B"];
+const characters: string[] = ["A", "B", "C"];
+
+function getEdge(externalEspaces: number): string {
+  return " ".repeat(externalEspaces) + "A" + " ".repeat(externalEspaces) + "\n";
+}
+
+function getRow(character: string, internalEspaces: number, externalEspaces: number): string {
+  return " ".repeat(externalEspaces) + character + " ".repeat(internalEspaces) + character + " ".repeat(externalEspaces) + "\n";
+}
 
 const diamond = {  
   
@@ -10,15 +18,16 @@ const diamond = {
       return "A";
     }
     else{
-      let result: string = "";
       const charPos = characters.indexOf(character);
-      for (let i = 0; i < charPos; i++) {
-        result += " " + characters[i] + " \n";
+      let result: string = getEdge(charPos);
+      for (let i = 1; i < charPos; i++) {
+        result += getRow(characters[i], i, i);
       }
-      result += characters[charPos] + " " + characters[charPos] + "\n";
-      for (let i = charPos - 1; i >= 0; i--) {
-        result += " " + characters[i] + " \n";
+      result += getRow(characters[charPos], (charPos * 2) - 1, 0);
+      for (let i = charPos - 1; i > 0; i--) {
+        result += getRow(characters[i], i, i);
       }
+      result += getEdge(charPos);
 
       return result;
     }
