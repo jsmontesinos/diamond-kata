@@ -1,75 +1,76 @@
-import diamond from '../src/diamond';
+import diamond from "../src/diamond";
 
-describe('diamond kata', () => {
+describe("diamond kata", () => {
   
-  it('should return empty if input is null', () => {
+  it("should return empty if input is null", () => {
     const input = null;
     
-    const output = diamond.print(input);
+    const output = diamond.create(input);
 
     expect(output).toBe("");
   });
 
-  it('should return empty if input is empty', () => {
+  it("should return empty if input is empty", () => {
     const input = "";
     
-    const output = diamond.print(input);
+    const output = diamond.create(input);
 
     expect(output).toBe("");
   });
 
-  it('should return A if input is A', () => {
+  it("should return A if input is A", () => {
     const input = "A";
     
-    const output = diamond.print(input);
+    const output = diamond.create(input);
 
     expect(output).toBe("A");
   });
 
-  it('should return B diamond if input is B', () => {
+  it("should return B diamond if input is B", () => {
     const input = "B";
     
-    const output = diamond.print(input);
+    const output = diamond.create(input);
 
     expect(output).toBe(" A \nB B\n A ");
   });
 
-  it('should return C diamond if input is C', () => {
+  it("should return C diamond if input is C", () => {
     const input = "C";
     
-    const output = diamond.print(input);
+    const output = diamond.create(input);
 
     expect(output).toBe("  A  \n B B \nC   C\n B B \n  A  ");
   });
 
-  it('should return empty diamond if input is 1', () => {
+  it("should return empty diamond if input is 1", () => {
     const input = "1";
     
-    const output = diamond.print(input);
+    const output = diamond.create(input);
 
     expect(output).toBe("");
   });
 
-  it('should return D diamond if input is D', () => {
+  it("should return D diamond if input is D", () => {
     const input = "D";
     
-    const output = diamond.print(input);
+    const output = diamond.create(input);
 
     expect(output).toBe("   A   \n  B B  \n C   C \nD     D\n C   C \n  B B  \n   A   ");
   });
 
-  it('should return E diamond if input is E', () => {
+  it("should return E diamond if input is E", () => {
     const input = "E";
     
-    const output = diamond.print(input);
+    const output = diamond.create(input);
 
-    expect(output).toBe("    A    \n   B B   \n  C   C  \n D     D \nE       E\n D     D \n  C   C  \n   B B   \n    A    ");
+    expect(output).toBe("    A    \n   B B   \n  C   C  \n D     D " +
+      "\nE       E\n D     D \n  C   C  \n   B B   \n    A    ");
   });
 
-  it('should include I line if input is I', () => {
+  it("should include I line if input is I", () => {
     const input = "I";
     
-    const output = diamond.print(input);
+    const output = diamond.create(input);
 
     expect(output.indexOf("I" + " ".repeat(15) + "I")).toBeGreaterThan(0);
   });
