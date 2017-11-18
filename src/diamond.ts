@@ -11,6 +11,7 @@ function getRow(character: string, internalEspaces: number, externalEspaces: num
 const diamond = {  
   
   print(character: string): string {
+    const diamondLines: string[] = [];
     if (!character || characters.indexOf(character) < 0) {
       return "";
     }
@@ -20,17 +21,13 @@ const diamond = {
     }
     
     const charPos = characters.indexOf(character);
-    let result: string = getEdge(charPos);
+    diamondLines.push(getEdge(charPos));
     for (let i = 1; i < charPos; i++) {
-      result += getRow(characters[i], (i * 2) - 1, charPos - i);
+      diamondLines.push(getRow(characters[i], (i * 2) - 1, charPos - i));
     }
-    result += getRow(characters[charPos], (charPos * 2) - 1, 0);
-    for (let i = charPos - 1; i > 0; i--) {
-      result += getRow(characters[i], (i * 2) - 1, charPos - i);
-    }
-    result += getEdge(charPos);
-
-    return result;
+    const diamondMiddle = getRow(characters[charPos], (charPos * 2) - 1, 0);
+    
+    return diamondLines.join("").concat(diamondMiddle).concat(diamondLines.reverse().join(""));
 
   }
 
