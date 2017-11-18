@@ -58,4 +58,12 @@ describe('diamond kata', () => {
     expect(output).toBe("   A   \n  B B  \n C   C \nD     D\n C   C \n  B B  \n   A   \n");
   });
 
+  it('should return E diamond if input is E', () => {
+    const input = "E";
+    
+    const output = diamond.print(input);
+
+    expect(output).toBe("    A    \n   B B   \n  C   C  \n D     D \nE       E\n D     D \n  C   C  \n   B B   \n    A    \n");
+  });
+
 });

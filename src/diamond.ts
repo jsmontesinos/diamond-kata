@@ -1,4 +1,4 @@
-const characters: string[] = ["A", "B", "C", "D"];
+const characters: string[] = ["A", "B", "C", "D", "E"];
 
 function getEdge(externalEspaces: number): string {
   return " ".repeat(externalEspaces) + "A" + " ".repeat(externalEspaces) + "\n";
