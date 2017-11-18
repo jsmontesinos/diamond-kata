@@ -1,11 +1,11 @@
 const characters: string[] = ["A", "B", "C", "D", "E"];
 
 function getEdge(externalEspaces: number): string {
-  return " ".repeat(externalEspaces) + "A" + " ".repeat(externalEspaces) + "\n";
+  return " ".repeat(externalEspaces) + "A" + " ".repeat(externalEspaces);
 }
 
 function getRow(character: string, internalEspaces: number, externalEspaces: number): string {
-  return " ".repeat(externalEspaces) + character + " ".repeat(internalEspaces) + character + " ".repeat(externalEspaces) + "\n";
+  return " ".repeat(externalEspaces) + character + " ".repeat(internalEspaces) + character + " ".repeat(externalEspaces);
 }
 
 const diamond = {  
@@ -17,7 +17,7 @@ const diamond = {
     }
     
     if (character === "A"){
-      return "A";
+      return getEdge(0);
     }
     
     const charPos = characters.indexOf(character);
@@ -27,7 +27,7 @@ const diamond = {
     }
     const diamondMiddle = getRow(characters[charPos], (charPos * 2) - 1, 0);
     
-    return diamondLines.join("").concat(diamondMiddle).concat(diamondLines.reverse().join(""));
+    return diamondLines.join("\n").concat("\n").concat(diamondMiddle).concat("\n").concat(diamondLines.reverse().join("\n"));
 
   }
 

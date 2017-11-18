@@ -31,7 +31,7 @@ describe('diamond kata', () => {
     
     const output = diamond.print(input);
 
-    expect(output).toBe(" A \nB B\n A \n");
+    expect(output).toBe(" A \nB B\n A ");
   });
 
   it('should return C diamond if input is C', () => {
@@ -39,7 +39,7 @@ describe('diamond kata', () => {
     
     const output = diamond.print(input);
 
-    expect(output).toBe("  A  \n B B \nC   C\n B B \n  A  \n");
+    expect(output).toBe("  A  \n B B \nC   C\n B B \n  A  ");
   });
 
   it('should return empty diamond if input is 1', () => {
@@ -55,7 +55,7 @@ describe('diamond kata', () => {
     
     const output = diamond.print(input);
 
-    expect(output).toBe("   A   \n  B B  \n C   C \nD     D\n C   C \n  B B  \n   A   \n");
+    expect(output).toBe("   A   \n  B B  \n C   C \nD     D\n C   C \n  B B  \n   A   ");
   });
 
   it('should return E diamond if input is E', () => {
@@ -63,7 +63,7 @@ describe('diamond kata', () => {
     
     const output = diamond.print(input);
 
-    expect(output).toBe("    A    \n   B B   \n  C   C  \n D     D \nE       E\n D     D \n  C   C  \n   B B   \n    A    \n");
+    expect(output).toBe("    A    \n   B B   \n  C   C  \n D     D \nE       E\n D     D \n  C   C  \n   B B   \n    A    ");
   });
 
 });
