@@ -50,4 +50,12 @@ describe('diamond kata', () => {
     expect(output).toBe("");
   });
 
+  it('should return D diamond if input is D', () => {
+    const input = "D";
+    
+    const output = diamond.print(input);
+
+    expect(output).toBe("   A   \n  B B  \n C   C \nD     D\n C   C \n  B B  \n   A   \n");
+  });
+
 });
