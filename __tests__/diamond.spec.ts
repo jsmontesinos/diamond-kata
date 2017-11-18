@@ -66,4 +66,12 @@ describe('diamond kata', () => {
     expect(output).toBe("    A    \n   B B   \n  C   C  \n D     D \nE       E\n D     D \n  C   C  \n   B B   \n    A    ");
   });
 
+  it('should include I line if input is I', () => {
+    const input = "I";
+    
+    const output = diamond.print(input);
+
+    expect(output.indexOf("I" + " ".repeat(15) + "I")).toBeGreaterThan(0);
+  });
+
 });
